@@ -5,7 +5,7 @@
 
 # System Design for Agentic Red Team Application Assessments
 
-This is a system design document for Repo Reaper, a mostly agentic system for assessing web apps as a red teamer. The tool is a collection of Claude Agents, MCP Servers, custom scripts, and prompts for a human operator. This tool is designed to systematically deconstruct and analyze codebases from the perspective of a highly sophisticated, nation-state adversary.
+This is a system design document for Repo Reaper, a mostly agentic system for assessing codebases as a red teamer. The tool is a collection of Claude Agents, MCP Servers, custom scripts, and prompts for a human operator. This tool is designed to systematically deconstruct and analyze codebases from the perspective of a highly sophisticated, nation-state adversary.
 
 ## How to Use
 
@@ -30,3 +30,7 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 - **Defensible audit trail:** R2 will log and track "what was tested, when, and against what commit". This can be turned into a report and defended later.
 
 - **Cost Control: **Deploying multiple parallel subagents across a large monorepo can get expensive. Gating behind an explicit operator kick off rather than auto-triggering on every push keeps spend predictable and intentional.
+
+## How it Works
+
+
