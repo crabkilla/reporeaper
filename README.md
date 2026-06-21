@@ -64,6 +64,5 @@ o	Even with unlimited time im not sure I would add this component. Tools do it w
 -	Initial access methods - many cases of attacks have been from long running campaigns to phish users > get implants on dev workstations > beacon out to a c2 > possibly push malicious code to repos. That’s just a whole thing in itself that had to be scoped out.
 -	Setting up the infra for this (MCP servers etc)
 -	Security for this tool itself. How to ensure only intended operators access it. Maybe even a tls proxy inspection to monitor and validate the traffic is expected and prevent against prompt injection (maybe a repo has a malicious REDAMe, a planted prompt injection payload). How to ensure only an intended operator is running this.
-<img width="468" height="423" alt="image" src="https://github.com/user-attachments/assets/fcc9b6eb-6874-47c9-9069-7addd39a9ab9" />
 
 
