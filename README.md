@@ -2,7 +2,6 @@
 
 ![Project Logo](repo-reaper-logo.png)
 
-Agentic Red Team Application Assessment Tool
 
 ### System Design for Agentic Red Team Application Assessments
 
@@ -25,4 +24,14 @@ Initial repo assessment will give the operator the attack surface. Operator will
 Second Pass will use the feedback from the initial repo assessment to inform the current test. 
 
 Re-test will essentially look at the findings from the second pass and check against them. 
-```
+
+
+### Design Validation
+
+The tool runs in a three phase human operator-gated CLI. This works for a few reasons:
+
+- Human triage: An LLM doesn't have enough context to know the criticality of one exposed API key vs another. The judgement call should remain with the operator
+
+- Defensible audit trail: R2 will log and track "what was tested, when, and against what commit". This can be turned into a report and defended later.
+
+- Cost Control: Deploying multiple parallel subagents across a large monorepo can get expensive. Gating behind an explicit operator kick off rather than auto-triggering on every push keeps spend predictable and intentional.
