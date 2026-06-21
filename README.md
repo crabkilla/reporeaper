@@ -57,6 +57,7 @@ SAST
 - Have an internal capabilities skill that can be referenced to know what offensive tooling we can use for certain or all parts of an attack chain. For instance, generate a C2 agent etc
 - Read-only access to the entire github org as a reference point for all other company repos to use as context
 -	I didn’t go to deep into frontend attacks (SQLi, XSS etc. because its pretty rare these days with the use of modern frameworks that sanitize input and output and parameterize queries properly etc.)
+-	this doesnt consider anything other than if iac is not used. so if tf wasnt used the operator would need to understand how to deploy it what are the security groups and networking rules etc.
 -	I also didn’t dive too deep into multi-tenancy, which is common for a SaaS
 -	Would also leave out fuzzing, brute force type stuff, leave that to existing tools like Burp / Snyk. Its important to see how the app would handle that type of attack – resource exhaustion, fuzzing (does it lead to crash or memory leak) etc.
 o	Even with unlimited time im not sure I would add this component. Tools do it well why change it.
