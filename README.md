@@ -54,6 +54,11 @@ SAST
 
 ## How this can be improved
 
+- Give the operator exploit options - Burp MCP, SmokedMeat MCP
+- Add a chat feature where you can leverage the LLM in the context of each assessment
+- 
+
+- the logic for how to actually reference the h1 bounty reports. Its a humungous database so cant be loading that each time.
 - Have an internal capabilities skill that can be referenced to know what offensive tooling we can use for certain or all parts of an attack chain. For instance, generate a C2 agent etc
 - Read-only access to the entire github org as a reference point for all other company repos to use as context
 -	I didn’t go to deep into frontend attacks (SQLi, XSS etc. because its pretty rare these days with the use of modern frameworks that sanitize input and output and parameterize queries properly etc.)
