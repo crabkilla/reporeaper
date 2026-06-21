@@ -96,11 +96,24 @@ These existing open source tools will be called by the agents as needed
    - Runtime Architecture - depiction of the cloud infrastructure
    - Data Flow Diagram - depiction of data flows through the application
    - Trust Boundaries Table - api routes, webhook receivers, file upload endpoints, ci pipeline triggers, admin panels
-3. 
-
+3. secrets-recon: initial scan across the repo for any hardcoded secrets
+4. The rest of the agents will run in parallel and each write their output to findings/
 
 
 ## How this can be improved
 
+- Runtime attack surface mapping: give the operator options to use Burp and SmokedMeat via MCP
+- A chat feature where the LLM can be leveraged in the context of each assessment
+- Enable the retest option to run non-interactively
+- Add Reporting
+- Out of band initial access methods
+- Security for this tool itself to ensure only the intended operators can leverage it
+- Feedback loop into defensive tooling
+
+## Whats left to be done
+
+- Skill and agent generation
+- The plumbing for tying the pieces together with MCP, API Keys etc.
+- Script development
 
 
