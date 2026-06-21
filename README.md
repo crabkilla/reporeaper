@@ -35,4 +35,12 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 
 ![Dispatch Workflow](dispatch-workflow.png)
 
+## Components
+
+| Name         | Type        | Triggered By |
+|--------------|-------------|--------------|
+| Clone Repo    | Event       | User Action  |
+| Example B    | Automation  | Schedule     |
+| Example C    | Alert       | System Rule  |
+
 
