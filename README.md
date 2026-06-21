@@ -37,11 +37,16 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 
 ## Components
 
-| Name         | Type        | Triggered By |
+| Purpose         | Tool        | Details |
 |--------------|-------------|--------------|
-| SCA    | Event       | User Action |
-| SAST    | Automation  | Schedule     |
-| Secrets Scanning    | Alert       | System Rule  |
+| SCA | semgrep | |
+| SAST | semgrep |      |
+| DAST | Burpsuite Pro|   |
+| Secrets Scanning | Trufflehog |  |
+| Container Mapping | trivy | | 
+| Kubernetes Mapping | kubescape | | 
+| Registry Mapping | trivy | | 
+| CI/CD | poutine | | 
 
 
 
