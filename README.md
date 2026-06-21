@@ -37,17 +37,36 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 
 ## Components
 
+### Tools
+
 | Purpose         | Tool        | Details |
 |--------------|-------------|--------------|
 | SCA | semgrep | |
 | SAST | semgrep |      |
-| DAST | Burpsuite Pro|   |
-| Secrets Scanning | Trufflehog |  |
+| DAST | burpsuite pro|   |
+| Secrets Scanning | trufflehog |  |
 | Container Mapping | trivy | | 
 | Kubernetes Mapping | kubescape | | 
 | Registry Mapping | trivy | | 
 | CI/CD | poutine | | 
 
+### Agents + Skills
+
+| Agent         | Skills        |
+|--------------|-------------|
+| secrets-recon | secrets-detection/SKILL.MD |
+| webapp-reviewer | owasp-web/SKILL.md |     
+| api-reviewer | owasp-api/SKILL.md |  
+| supply-chain-cicd-reviewer | owasp-cicd/SKILL.md | 
+| iac-reviewer | iac-misconfig-review/SKILL.md | 
+| cloud-posture-reviewer | aws-iam-review/SKILL.md, aws-sg-review/SKILL.md, aws-codeartifact-review/SKILL.md | 
+| container-image-reviewer | owasp-docker/SKILL.md | 
+| k8s-reviewer | owasp-kubernetes/SKILL.md | 
+| codebase-to-diagram | codebase-to-diagram/SKILL.md | 
+| findings-normalizer | finding-severity-rubric/SKILL.md, finding-schema/SKILL.md | 
+| attack-chain-generator | attack-chain-generator/SKILL.md | 
+
+### MCP
 
 
 
