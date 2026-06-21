@@ -46,19 +46,35 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 ### Agents + Skills
 These agents and skills will be developed to leverage LLM capability + reach for existing tools as needed
 
-| Agent         | Skills        |
-|--------------|-------------|
-| secrets-recon | secrets-detection/SKILL.MD |
-| webapp-reviewer | owasp-web/SKILL.md |     
-| api-reviewer | owasp-api/SKILL.md |  
-| supply-chain-cicd-reviewer | owasp-cicd/SKILL.md | 
-| iac-reviewer | iac-misconfig-review/SKILL.md | 
-| cloud-posture-reviewer | aws-iam-review/SKILL.md, aws-sg-review/SKILL.md, aws-codeartifact-review/SKILL.md | 
-| container-image-reviewer | owasp-docker/SKILL.md | 
-| k8s-reviewer | owasp-kubernetes/SKILL.md | 
-| codebase-to-diagram | codebase-to-diagram/SKILL.md | 
-| findings-normalizer | finding-severity-rubric/SKILL.md, finding-schema/SKILL.md | 
-| attack-chain-generator | attack-chain-generator/SKILL.md | 
+
+1.codebase-to-diagram
+- look for any directory structures, package.json, requirements.txt, go.md, dockerfiles, kubernetes helm charts, etc. to map out http entrypoints, auth libraries, third party APIs, known vulnerable versions in use, exposed container ports, shared networks/volumes, session token storage
+- ouput: excalidraw diagrams (system context, build pipeline diagram, runtime architecture diagram, dataflow diagram) this will help identify things like where secrets enter the pipeline for example
+
+2. secrets-recon
+  - 
+  - output: 
+  
+3. webapp-reviewer
+
+4. api-reviewer
+
+5. supply-chain-cicd-reviewer
+- 
+
+6. iac-reviewer
+
+7. cloud-posture-reviewer
+- this will review AWS IAM policies, Security Groups, and CodeArtifacts
+
+8. container-image-reviewer
+
+9. k8s-reviewer
+
+10. findings-normalizer
+
+11. attack-chain-generator
+    - it would leverage mitre att&ck for cloud/saas/containers/k8s and compare it against the findings to map out potential attack paths
 
 
 ### Tools
@@ -76,7 +92,6 @@ These existing open source tools will be called by the agents as needed
 | CI/CD | poutine | https://github.com/boostsecurityio/poutine | 
 
 
-### MCP
 
 ## Assumptions
 
@@ -85,25 +100,12 @@ These existing open source tools will be called by the agents as needed
 - Codebases will primarily be monorepos
 - Token consumption is a non-issue :) 
 
-## Workflow
-
-1. Operator initiates python cli and selects Initial Assessment
-2. The initial assessment will kick off the following agents in order:
-   - **codebase-to-diagram:** this will read directory structure, package.json, requirements.txt, go.md, dockerfiles, CI configs, etc. to understand the overall application. 
-   Output:
-   - System Context Diagram - depiction of how a user would use the app
-   - Deployment Diagram - depiction of the build pipeline
-   - Runtime Architecture - depiction of the cloud infrastructure
-   - Data Flow Diagram - depiction of data flows through the application
-   - Trust Boundaries Table - api routes, webhook receivers, file upload endpoints, ci pipeline triggers, admin panels
-3. secrets-recon: initial scan across the repo for any hardcoded secrets
-4. The rest of the agents will run in parallel and each write their output to findings/
-
 
 ## How this can be improved
 
 - Runtime attack surface mapping: give the operator options to use Burp and SmokedMeat via MCP
 - A chat feature where the LLM can be leveraged in the context of each assessment
+- Leverage hackerone published bug bounty reports in the attack-chain-generator skill
 - Enable the retest option to run non-interactively
 - Add Reporting
 - Out of band initial access methods
