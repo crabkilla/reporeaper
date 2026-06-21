@@ -29,7 +29,7 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 
 - **Defensible audit trail:** R2 will log and track "what was tested, when, and against what commit". This can be turned into a report and defended later.
 
-- **Cost Control: **Deploying multiple parallel subagents across a large monorepo can get expensive. Gating behind an explicit operator kick off rather than auto-triggering on every push keeps spend predictable and intentional.
+- **Cost Control:** Deploying multiple parallel subagents across a large monorepo can get expensive. Gating behind an explicit operator kick off rather than auto-triggering on every push keeps spend predictable and intentional.
 
 ## How it Works
 
@@ -37,20 +37,9 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 
 ## Components
 
-### Tools
-
-| Purpose         | Tool        | Details |
-|--------------|-------------|--------------|
-| SCA | semgrep | |
-| SAST | semgrep |      |
-| DAST | burpsuite pro|   |
-| Secrets Scanning | trufflehog |  |
-| Container Mapping | trivy | | 
-| Kubernetes Mapping | kubescape | | 
-| Registry Mapping | trivy | | 
-| CI/CD | poutine | | 
 
 ### Agents + Skills
+These agents and skills will be developed to leverage LLM capability + reach for existing tools as needed
 
 | Agent         | Skills        |
 |--------------|-------------|
@@ -66,8 +55,29 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 | findings-normalizer | finding-severity-rubric/SKILL.md, finding-schema/SKILL.md | 
 | attack-chain-generator | attack-chain-generator/SKILL.md | 
 
+
+### Tools
+These existing open source tools will be called by the agents as needed
+
+| Purpose         | Tool        | Details |
+|--------------|-------------|--------------|
+| SCA | semgrep | https://github.com/semgrep/semgrep |
+| SAST | semgrep | https://github.com/semgrep/semgrep  |
+| DAST | COMING SOON - burpsuite pro | https://portswigger.net/bappstore/9952290f04ed4f628e624d0aa9dccebc  |
+| Secrets Scanning | trufflehog | https://github.com/trufflesecurity/trufflehog |
+| Container Mapping | trivy | https://github.com/aquasecurity/trivy | 
+| Kubernetes Mapping | kubescape | https://github.com/kubescape/kubescape | 
+| Registry Mapping | trivy | https://github.com/aquasecurity/trivy | 
+| CI/CD | poutine | https://github.com/boostsecurityio/poutine | 
+
+
 ### MCP
 
+# Workflow
+
+1. Operator initiates python cli and selects Initial Assessment
+2. The initial assessment will kick off the following agents in order:
+   - codebase-to-diagram: this will read directory structure, package.json, requirements.txt, go.md, dockerfiles, CI configs, etc. to understand 
 
 
 ## How this can be improved
