@@ -7,6 +7,11 @@
 
 This is a system design document for Repo Reaper, a mostly agentic system for assessing codebases as a red teamer. The tool is a collection of Claude Agents, MCP Servers, custom scripts, and prompts for a human operator. This tool is designed to systematically deconstruct and analyze codebases from the perspective of a highly sophisticated, nation-state adversary.
 
+The outputs of this tool are meant to be useful for red team operators, defenders, and codebase owners.
+For red teamers - the tool will provide you with attack chain options
+For defenders - detection opportunities across any part of the attack chain
+For code owners - automated PR generation for fixes
+
 ## How to Use
 
 1. Clone the repo
@@ -73,11 +78,26 @@ These existing open source tools will be called by the agents as needed
 
 ### MCP
 
-# Workflow
+## Assumptions
+
+- Assuming a target tech stack comprising of Github, Terraform, AWS, Kubernetes and Docker
+- This tool will be granted read-only access to github, AWS, artifact repositories, and ticket management
+- Codebases will primarily be monorepos
+- Token consumption is a non-issue :) 
+
+## Workflow
 
 1. Operator initiates python cli and selects Initial Assessment
 2. The initial assessment will kick off the following agents in order:
-   - codebase-to-diagram: this will read directory structure, package.json, requirements.txt, go.md, dockerfiles, CI configs, etc. to understand 
+   - **codebase-to-diagram:** this will read directory structure, package.json, requirements.txt, go.md, dockerfiles, CI configs, etc. to understand the overall application. 
+   Output:
+   - System Context Diagram - depiction of how a user would use the app
+   - Deployment Diagram - depiction of the build pipeline
+   - Runtime Architecture - depiction of the cloud infrastructure
+   - Data Flow Diagram - depiction of data flows through the application
+   - Trust Boundaries Table - api routes, webhook receivers, file upload endpoints, ci pipeline triggers, admin panels
+3. 
+
 
 
 ## How this can be improved
