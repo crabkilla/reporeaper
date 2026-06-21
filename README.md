@@ -19,7 +19,7 @@ This is a system design document for Repo Reaper, a mostly agentic system for as
    3) Re-test. # Run the exact same scenarios to validate fixes
    ```
 
-
+![Three phase Workflow](three-phase-workflow.png)
 
 ## Design Validation
 
@@ -32,5 +32,7 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 - **Cost Control: **Deploying multiple parallel subagents across a large monorepo can get expensive. Gating behind an explicit operator kick off rather than auto-triggering on every push keeps spend predictable and intentional.
 
 ## How it Works
+
+![Dispatch Workflow](dispatch-workflow.png)
 
 
