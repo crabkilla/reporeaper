@@ -47,7 +47,7 @@ The tool runs in a three phase human operator-gated CLI. This works for a few re
 These agents and skills will be developed to leverage LLM capability + reach for existing tools as needed
 
 
-1.**codebase-mapper**
+1. **codebase-mapper**
     - **input:** url to github repo
     - **purpose:** clones the repo locally and looks for any directory structures, package.json, requirements.txt, go.md, dockerfiles, kubernetes helm charts, etc. to map out http entrypoints, auth libraries, third party APIs, known vulnerable versions in use, exposed container ports, shared networks/volumes, session token storage
     - **ouput:** a breakdown of how the app gets deployed written to `architecture.json` which will get referenced throughout the assessment. Also produces excalidraw diagrams (system context, build pipeline diagram, runtime architecture diagram, dataflow diagram) this will help identify things like where secrets enter the pipeline for example
