@@ -60,7 +60,7 @@ These agents and skills will be developed to leverage LLM capability + reach for
 3. **webapp-reviewer**
     - **input:** the local repo
     - **purpose:** calls semgrep SAST to review the codebase and flag any findings for things like reflected/stored XSS, unauthenticated or missing-auth-check endpoints, insecure file upload handling (extension/MIME bypass, path traversal on upload), IDOR in object-returning routes, SSRF in any user-controlled fetch/URL
-    - output: tagged findings mapped to OWASP Top 10, with file:line location written to `webapp-reviewed.json`
+    - **output:** tagged findings mapped to OWASP Top 10, with file:line location written to `webapp-reviewed.json`
 
 4. **api-reviewer**
    - **input:** the local repo
@@ -139,6 +139,7 @@ These existing open source tools will be called by the agents as needed
 
 ## How this can be improved
 
+- Add database reviewer
 - Runtime attack surface mapping: give the operator options to use Burp and SmokedMeat via MCP
 - A chat feature where the LLM can be leveraged in the context of each assessment
 - Leverage hackerone published bug bounty reports in the attack-chain-generator skill
